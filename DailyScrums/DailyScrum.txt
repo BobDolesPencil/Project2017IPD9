@@ -1,0 +1,14 @@
+Sebastien Scullion - Matthew Stinis
+
+Scrum 1 - 4/10/2017
+
+First Scrum:
+1. Create preliminary user stories
+
+Will do in next 24h:
+1. Research on different parts of application
+2. How feasible is it to include audio file conversion
+3. Create all user stories
+
+Where we need help is:
+1. File conversion: Best use plugin or create from scratch
