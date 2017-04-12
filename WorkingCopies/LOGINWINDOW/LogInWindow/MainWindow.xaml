@@ -1,0 +1,13 @@
+﻿<Window x:Class="LogInWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Log In" Height="187" Width="415">
+    <Grid Margin="0,0,2,11">
+        <Button Content="Log In" HorizontalAlignment="Left" Margin="171,106,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,-3.955"/>
+        <Label x:Name="lblUserName" Content="User Name: " HorizontalAlignment="Left" Margin="78,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblUserPass" Content="Password:" HorizontalAlignment="Left" Margin="90,41,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="23" Margin="158,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtUserPass" HorizontalAlignment="Left" Height="23" Margin="158,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

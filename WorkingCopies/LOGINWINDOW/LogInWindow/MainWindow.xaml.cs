@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ipdMPMain
+namespace LogInWindow
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,23 +24,5 @@ namespace ipdMPMain
         {
             InitializeComponent();
         }
-
-        private void LogIn_Click(object sender, RoutedEventArgs e)
-        {
-            LogIn splash = new LogIn();
-            splash.ShowDialog();
-        }
-
-        private void NewUser_Click(object sender, RoutedEventArgs e)
-        {
-            NewUser Newsplash = new NewUser();
-            Newsplash.ShowDialog();
-        }
-
-        
-
-       
-
-      
     }
 }
