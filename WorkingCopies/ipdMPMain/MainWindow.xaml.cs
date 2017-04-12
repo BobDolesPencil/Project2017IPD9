@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using Microsoft.Win32;
 
 namespace ipdMPMain
 {
@@ -20,9 +22,11 @@ namespace ipdMPMain
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MediaPlayer mediaPlayer = new MediaPlayer();
+
         public MainWindow()
         {
-            InitializeComponent();
+           
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -30,6 +34,32 @@ namespace ipdMPMain
 
         }
 
-      
+        private void BtPlay_OnClick(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Play();
+            throw new NotImplementedException();
+        }
+
+        private void BtStop_OnClick(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Stop();
+            throw new NotImplementedException();    
+        }
+
+        private void BtPause_OnClick(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Pause();
+            throw new NotImplementedException();
+        }
+
+        private void BtPrevious_OnClick(object sender, RoutedEventArgs e)
+        {           
+            throw new NotImplementedException();
+        }
+
+        private void BtNext_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
