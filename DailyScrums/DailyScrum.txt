@@ -1,5 +1,13 @@
 Sebastien Scullion - Matthew Stinis
 
+Scrum 3 - 4/10/2017
+	no meeting
+
+Scrum 2 - 3/11/2017
+	no meeting
+	
+
+
 Scrum 1 - 4/10/2017
 
 First Scrum:
@@ -12,3 +20,4 @@ Will do in next 24h:
 
 Where we need help is:
 1. File conversion: Best use plugin or create from scratch
+
