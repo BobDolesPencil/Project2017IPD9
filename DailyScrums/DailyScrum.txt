@@ -1,7 +1,13 @@
 Sebastien Scullion - Matthew Stinis
 
 Scrum 3 - 4/10/2017
-	no meeting
+	Sebastien - TODO in 24 hrs
+		- implemnt all tables in database
+		- implemnt behind code for login custom window ( wait for mat push )
+		
+	Mathew - TODO in 24 hrs
+		- implent main window
+		- style main window
 
 Scrum 2 - 3/11/2017
 	no meeting
