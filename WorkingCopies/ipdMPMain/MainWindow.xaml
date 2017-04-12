@@ -36,10 +36,10 @@
             <MenuItem Header="Library"/>
             <MenuItem Header="Help"/>
         </Menu>
-        <Button Content="play" HorizontalAlignment="Left" Margin="279,0,0,0" VerticalAlignment="Top" Width="33" Height="23"/>
+        <Button x:Name="btPlay" Content="play"  HorizontalAlignment="Left" Margin="279,0,0,0" VerticalAlignment="Top" Width="33" Height="23" Click="Button_Click"/>
         <Button Content="|&lt;" HorizontalAlignment="Left" Margin="369,0,0,297" VerticalAlignment="Bottom" Width="28" Height="23"/>
         <Button Content="||" HorizontalAlignment="Left" Margin="341,0,0,0" VerticalAlignment="Top" Width="28" Height="23"/>
-        <Button Content="stop" HorizontalAlignment="Left" Margin="312,0,0,0" VerticalAlignment="Top" Width="29" Height="23"/>
+        <Button x:Name="btStop" Content="stop" HorizontalAlignment="Left" Margin="312,0,0,0" VerticalAlignment="Top" Width="29" Height="23"/>
         <Button Content="&gt;|" HorizontalAlignment="Left" Margin="397,0,0,0" VerticalAlignment="Top" Width="28" Height="23"/>
         <Slider HorizontalAlignment="Left" Margin="425,-1,0,0" VerticalAlignment="Top" Width="92" Height="24"/>
 
