@@ -1,47 +1,56 @@
 ﻿<Window x:Class="ipdMPMain.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <ListView HorizontalAlignment="Left" Height="275" Margin="100,23,0,0" VerticalAlignment="Top" Width="417" SelectionChanged="ListView_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Duration" Width="120"/>
-                    <GridViewColumn Header="Title" Width="120"/>
-                    <GridViewColumn Header="Artist" Width="120"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="0,198,0,0" VerticalAlignment="Top" Width="100">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Playlist" Width="100"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="0,98,0,0" VerticalAlignment="Top" Width="100">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Metadata" Width="100"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <StatusBar HorizontalAlignment="Left" Height="22" Margin="0,298,0,0" VerticalAlignment="Top" Width="517"/>
-        <Image HorizontalAlignment="Left" Height="79" VerticalAlignment="Top" Width="100" Margin="0,19,0,0"/>
-        <Menu HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="279">
-            <MenuItem Header="File"/>
-            <MenuItem Header="Edit"/>
+        Title="MainWindow" MaxHeight="548" MaxWidth="725" Height="548" Width="725" WindowState="Maximized">
+    <DockPanel Margin="0,0,0,-4">
+        <Menu Height="24" VerticalAlignment="Top" DockPanel.Dock="Top">
+            <MenuItem Header="User"/>
+            <MenuItem Header="Tools"/>
             <MenuItem Header="View"/>
-            <MenuItem Header="Playback"/>
-            <MenuItem Header="Library"/>
             <MenuItem Header="Help"/>
         </Menu>
-        <Button x:Name="BtPlay" Click="BtPlay_OnClick"  Content="play"  HorizontalAlignment="Left" Margin="279,0,0,0" VerticalAlignment="Top" Width="33" Height="23"/>
-        <Button x:Name="BtPrevious" Click="BtPrevious_OnClick" Content="|&lt;" HorizontalAlignment="Left" Margin="369,0,0,297" VerticalAlignment="Top" Width="28" Height="23"/>
-        <Button x:Name="BtPause" Click="BtPause_OnClick" Content="||" HorizontalAlignment="Left" Margin="341,0,0,0" VerticalAlignment="Top" Width="28" Height="23"/>
-        <Button x:Name="BtStop" Click="BtStop_OnClick" Content="stop" HorizontalAlignment="Left" Margin="312,0,0,0" VerticalAlignment="Top" Width="29" Height="23"/>
-        <Button x:Name="BtNext" Click="BtNext_OnClick" Content="&gt;|" HorizontalAlignment="Left" Margin="397,0,0,0" VerticalAlignment="Top" Width="28" Height="23"/>
-        <Slider HorizontalAlignment="Left" Margin="425,-1,0,0" VerticalAlignment="Top" Width="92" Height="24"/>
+        <Grid>
+            <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="220,461,448,10" RenderTransformOrigin="-0.082,0.517"/>
+            <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="416,461,252,10"/>
+            <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="269,461,399,10"/>
+            <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="367,461,301,10"/>
+            <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="318,461,350,10" RenderTransformOrigin="0.531,1.207"/>
 
-    </Grid> 
+            <TabControl TabStripPlacement="Left" DockPanel.Dock="Top" Margin="0,0,0,37">
+                <TabItem Header="Player">
+                    <MediaElement Name="MePlayer" LoadedBehavior="Manual" Stretch="None" />
+                </TabItem>
+                <TabItem Header="Library">
+                    <ListView>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Title" Width="185"/>
+                                <GridViewColumn Header="Artist" Width="140"/>
+                                <GridViewColumn Header="Album" Width="160"/>
+                                <GridViewColumn Header="Duration" Width="80"/>
+                                <GridViewColumn Header="Year" Width="80"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+                <TabItem Header="Playlist">
+                    <ListView>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Title" Width="185"/>
+                                <GridViewColumn Header="Artist" Width="140"/>
+                                <GridViewColumn Header="Album" Width="160"/>
+                                <GridViewColumn Header="Duration" Width="80"/>
+                                <GridViewColumn Header="Year" Width="80"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+            </TabControl>
+            <StatusBar HorizontalAlignment="Stretch" Height="26" Margin="2,462,497,0" VerticalAlignment="Top" Width="218"/>
+            <Slider HorizontalAlignment="Stretch" Margin="465,462,117,0" VerticalAlignment="Top" Height="26" Width="135"/>
+            <ProgressBar HorizontalAlignment="Stretch" Height="26" Margin="598,461,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </DockPanel>
 </Window>
+
