@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ipdMPMain"
         mc:Ignorable="d"
-        Title="audioConverter" MaxHeight="348" MaxWidth="525" Height="348" Width="525" WindowState="Maximized">
+        Title="audioConverter" MaxHeight="448" MaxWidth="675" Height="448" Width="675" WindowState="Maximized">
     <DockPanel Margin="0,0,0,-4">
         <Menu Height="24" VerticalAlignment="Top" DockPanel.Dock="Top">
             <MenuItem Header="User"/>
@@ -14,17 +14,33 @@
             <MenuItem Header="Help"/>
         </Menu>
         <Grid>
-            <ListView Margin="0,0,0,73">
+            <ListView Margin="0,51,0,90">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Files to Convert" Width="220"/>
-                        <GridViewColumn Header="Format" Width="70"/>
-                        <GridViewColumn Header="Size" Width="70"/>
-                        <GridViewColumn Header="File Location" Width="150"/>
+                        <GridViewColumn Header="Files to Convert" Width="270"/>
+                        <GridViewColumn Header="Format" Width="80"/>
+                        <GridViewColumn Header="Size" Width="90"/>
+                        <GridViewColumn Header="File Location" Width="172"/>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <StatusBar HorizontalAlignment="Left" Height="73" Margin="0,224,0,0" VerticalAlignment="Top" Width="227"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="0,307,0,0" Stroke="Black" VerticalAlignment="Top" Width="667"/>
+            <ComboBox HorizontalAlignment="Left" Margin="104,323,0,0" VerticalAlignment="Top" Width="213" />
+            <Button Content="Browse" HorizontalAlignment="Left" Margin="332,324,0,0" VerticalAlignment="Top" Width="75"/>
+            <CheckBox Content="Output files to source folder" HorizontalAlignment="Left" Margin="413,324,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="Copy source folder structure" HorizontalAlignment="Left" Margin="412,354,0,0" VerticalAlignment="Top"/>
+            <Button Content="Open Output Folder" HorizontalAlignment="Left" Margin="262,354,0,0" VerticalAlignment="Top" Width="145" />
+            <Button Content="Options" HorizontalAlignment="Left" Margin="173,354,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.693,0.6"/>
+            <Button Content="Convert" HorizontalAlignment="Left" Margin="597,321,0,0" VerticalAlignment="Top" Width="60" Height="51"/>
+            <ComboBox HorizontalAlignment="Left" Margin="104,354,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.849,0.636"/>
+            <Label Content="Output Folder" HorizontalAlignment="Left" Margin="15,321,0,0" VerticalAlignment="Top"/>
+            <Label Content="Output Format" HorizontalAlignment="Left" Margin="10,354,0,10" RenderTransformOrigin="0.553,0.308"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="51" Stroke="Black" VerticalAlignment="Top" Width="667"/>
+            <Button Content="Add Files" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51"/>
+            <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="157,0,0,0"/>
+            <Button Content="Add Folder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="78,0,0,0"/>
+            <Button Content="Options" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="315,0,0,0"/>
+            <Button Content="Remove All" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="236,0,0,0"/>
         </Grid>
     </DockPanel>
 </Window>
