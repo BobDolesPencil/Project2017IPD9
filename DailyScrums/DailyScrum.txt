@@ -1,5 +1,14 @@
 Sebastien Scullion - Matthew Stinis
 
+Scrum 4 - 4/18/2017
+          Seb
+           -
+           -
+           -
+          Matt
+           -
+           - learn Ribbon
+
 Scrum 3 - 4/10/2017
 	Sebastien - TODO in 24 hrs
 		- implemnt all tables in database

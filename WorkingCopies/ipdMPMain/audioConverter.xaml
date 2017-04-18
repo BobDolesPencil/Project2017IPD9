@@ -8,13 +8,13 @@
         Title="audioConverter" MaxHeight="448" MaxWidth="675" Height="448" Width="675" WindowState="Maximized">
     <DockPanel Margin="0,0,0,-4">
         <Menu Height="24" VerticalAlignment="Top" DockPanel.Dock="Top">
-            <MenuItem Header="User"/>
-            <MenuItem Header="Tools"/>
-            <MenuItem Header="View"/>
-            <MenuItem Header="Help"/>
+            <MenuItem x:Name="miUser" Header="User"/>
+            <MenuItem x:Name="miTools" Header="Tools"/>
+            <MenuItem x:Name="miView" Header="View"/>
+            <MenuItem x:Name="miHelp" Header="Help"/>
         </Menu>
         <Grid>
-            <ListView Margin="0,51,0,90">
+            <ListView x:Name="lvFileView" Margin="0,51,0,90">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Files to Convert" Width="270"/>
@@ -25,14 +25,12 @@
                 </ListView.View>
             </ListView>
             <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="0,307,0,0" Stroke="Black" VerticalAlignment="Top" Width="667"/>
-            <ComboBox HorizontalAlignment="Left" Margin="104,323,0,0" VerticalAlignment="Top" Width="213" />
-            <Button Content="Browse" HorizontalAlignment="Left" Margin="332,324,0,0" VerticalAlignment="Top" Width="75"/>
-            <CheckBox Content="Output files to source folder" HorizontalAlignment="Left" Margin="413,324,0,0" VerticalAlignment="Top"/>
-            <CheckBox Content="Copy source folder structure" HorizontalAlignment="Left" Margin="412,354,0,0" VerticalAlignment="Top"/>
-            <Button Content="Open Output Folder" HorizontalAlignment="Left" Margin="262,354,0,0" VerticalAlignment="Top" Width="145" />
-            <Button Content="Options" HorizontalAlignment="Left" Margin="173,354,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.693,0.6"/>
-            <Button Content="Convert" HorizontalAlignment="Left" Margin="597,321,0,0" VerticalAlignment="Top" Width="60" Height="51"/>
-            <ComboBox HorizontalAlignment="Left" Margin="104,354,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.849,0.636"/>
+            <Button x:Name="btBrowseFolder" Content="Browse" HorizontalAlignment="Left" Margin="288,354,0,0" VerticalAlignment="Top" Width="106"/>
+            <CheckBox x:Name="cbOutputToSource" Content="Output files to source folder" HorizontalAlignment="Left" Margin="413,324,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="cbCopySource" Content="Copy source folder structure" HorizontalAlignment="Left" Margin="412,354,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btOptions" Content="Options" HorizontalAlignment="Left" Margin="173,354,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.693,0.6"/>
+            <Button x:Name="btConvert" Content="Convert" HorizontalAlignment="Left" Margin="597,321,0,0" VerticalAlignment="Top" Width="60" Height="51"/>
+            <ComboBox x:Name="comboFormat" HorizontalAlignment="Left" Margin="104,354,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.849,0.636"/>
             <Label Content="Output Folder" HorizontalAlignment="Left" Margin="15,321,0,0" VerticalAlignment="Top"/>
             <Label Content="Output Format" HorizontalAlignment="Left" Margin="10,354,0,10" RenderTransformOrigin="0.553,0.308"/>
             <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="51" Stroke="Black" VerticalAlignment="Top" Width="667"/>
@@ -41,6 +39,7 @@
             <Button Content="Add Folder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="78,0,0,0"/>
             <Button Content="Options" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="315,0,0,0"/>
             <Button Content="Remove All" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="236,0,0,0"/>
+            <TextBlock x:Name="tbFilePath" HorizontalAlignment="Left" Margin="107,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="..."/>
         </Grid>
     </DockPanel>
 </Window>
