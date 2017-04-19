@@ -1,20 +1,15 @@
-﻿<Window x:Class="ipdMPMain.audioConverter"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ipdMPMain"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="ipdMPMain.audioConverter"
         mc:Ignorable="d"
         Title="audioConverter" MaxHeight="448" MaxWidth="675" Height="448" Width="675" WindowState="Maximized">
     <DockPanel Margin="0,0,0,-4">
-        <Menu Height="24" VerticalAlignment="Top" DockPanel.Dock="Top">
-            <MenuItem x:Name="miUser" Header="User"/>
-            <MenuItem x:Name="miTools" Header="Tools"/>
-            <MenuItem x:Name="miView" Header="View"/>
-            <MenuItem x:Name="miHelp" Header="Help"/>
-        </Menu>
         <Grid>
-            <ListView x:Name="lvFileView" Margin="0,51,0,90">
+            <ListView x:Name="lvFileView" Margin="0,91,0,0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Files to Convert" Width="270"/>
@@ -24,22 +19,74 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="0,307,0,0" Stroke="Black" VerticalAlignment="Top" Width="667"/>
-            <Button x:Name="btBrowseFolder" Content="Browse" HorizontalAlignment="Left" Margin="288,354,0,0" VerticalAlignment="Top" Width="106"/>
-            <CheckBox x:Name="cbOutputToSource" Content="Output files to source folder" HorizontalAlignment="Left" Margin="413,324,0,0" VerticalAlignment="Top"/>
-            <CheckBox x:Name="cbCopySource" Content="Copy source folder structure" HorizontalAlignment="Left" Margin="412,354,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btOptions" Content="Options" HorizontalAlignment="Left" Margin="173,354,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.693,0.6"/>
-            <Button x:Name="btConvert" Content="Convert" HorizontalAlignment="Left" Margin="597,321,0,0" VerticalAlignment="Top" Width="60" Height="51"/>
-            <ComboBox x:Name="comboFormat" HorizontalAlignment="Left" Margin="104,354,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.849,0.636"/>
-            <Label Content="Output Folder" HorizontalAlignment="Left" Margin="15,321,0,0" VerticalAlignment="Top"/>
-            <Label Content="Output Format" HorizontalAlignment="Left" Margin="10,354,0,10" RenderTransformOrigin="0.553,0.308"/>
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="51" Stroke="Black" VerticalAlignment="Top" Width="667"/>
-            <Button Content="Add Files" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51"/>
-            <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="157,0,0,0"/>
-            <Button Content="Add Folder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="78,0,0,0"/>
-            <Button Content="Options" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="315,0,0,0"/>
-            <Button Content="Remove All" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="51" Margin="236,0,0,0"/>
-            <TextBlock x:Name="tbFilePath" HorizontalAlignment="Left" Margin="107,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="..."/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="83" Margin="0,339,0,0" Stroke="Black" VerticalAlignment="Top" Width="667"/>
+            <Button x:Name="btBrowseFolder" Content="Browse" HorizontalAlignment="Left" Margin="289,381,0,0" VerticalAlignment="Top" Width="106"/>
+            <CheckBox x:Name="cbOutputToSource" Content="Output files to source folder" HorizontalAlignment="Left" Margin="413,356,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="cbCopySource" Content="Copy source folder structure" HorizontalAlignment="Left" Margin="413,384,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btOptions" Content="Options" HorizontalAlignment="Left" Margin="174,381,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.693,0.6"/>
+            <Button x:Name="btConvert" Content="Convert" HorizontalAlignment="Left" Margin="597,353,0,0" VerticalAlignment="Top" Width="60" Height="51"/>
+            <ComboBox x:Name="comboFormat" HorizontalAlignment="Left" Margin="104,381,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.849,0.636"/>
+            <Label Content="Output Folder" HorizontalAlignment="Left" Margin="15,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.512,0.731"/>
+            <Label Content="Output Format" HorizontalAlignment="Left" Margin="10,381,0,10" RenderTransformOrigin="0.553,0.308"/>
+            <TextBlock x:Name="tbFilePath" HorizontalAlignment="Left" Margin="104,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="..."/>
+            <Custom:Ribbon HorizontalAlignment="Left" VerticalAlignment="Top" Height="91" Width="667">
+                <Custom:Ribbon.HelpPaneContent>
+                    <Custom:RibbonButton/>
+                </Custom:Ribbon.HelpPaneContent>
+                <!-- Quick Access Toolbar - located at the upper-left corner -->
+                <Custom:Ribbon.QuickAccessToolBar>
+                    <Custom:RibbonQuickAccessToolBar>
+                        <Custom:RibbonButton x:Name ="Save" />
+                        <Custom:RibbonSplitButton x:Name ="Undo" >
+                            <Custom:RibbonSplitMenuItem Header="Undo 1" />
+                            <Custom:RibbonSplitMenuItem Header="Undo 2" />
+                            <Custom:RibbonSplitMenuItem Header="Undo 3" />
+                        </Custom:RibbonSplitButton>
+                        <Custom:RibbonSplitButton x:Name="Redo"  >
+                            <Custom:RibbonSplitMenuItem Header="Redo 1" />
+                            <Custom:RibbonSplitMenuItem Header="Redo 2" />
+                        </Custom:RibbonSplitButton>
+                    </Custom:RibbonQuickAccessToolBar>
+                </Custom:Ribbon.QuickAccessToolBar>
+                <!-- Application Menu, located at the left-hand side (down arrow) -->
+                <Custom:Ribbon.ApplicationMenu>
+                    <Custom:RibbonApplicationMenu KeyTip="M">
+                        <Custom:RibbonApplicationMenuItem Header="Options"  ImageSource="Images\options.png" />
+                        <Custom:RibbonApplicationMenuItem Header="Exit"  ImageSource="Images\quit.png" />
+                    </Custom:RibbonApplicationMenu>
+                </Custom:Ribbon.ApplicationMenu>
+                <!-- Ribbon Tab #1: User -->
+                <Custom:RibbonTab Header="User" KeyTip="U" Margin="0,0,0,46" >
+                    <!-- User group-->
+                    <Custom:RibbonGroup x:Name="UserGroup" Header="User">
+                        <Custom:RibbonMenuButton  Label="Register" KeyTip="R">
+                            <Custom:RibbonMenuItem Header="Create New" KeyTip="C"/>
+                        </Custom:RibbonMenuButton>
+                        <Custom:RibbonButton Label="Log In" KeyTip="LI" />
+                    </Custom:RibbonGroup>
+                    <!-- Layout group-->
+                    <Custom:RibbonGroup x:Name="Layout" Header="Application Layout">
+                        <Custom:RibbonMenuButton Label="Select Skin" KeyTip="SK">
+                            <Custom:RibbonMenuItem Header="Theme" KeyTip="T"/>
+                            <Custom:RibbonMenuItem Header="Color" KeyTip="C"/>
+                        </Custom:RibbonMenuButton>
+                    </Custom:RibbonGroup>
+                </Custom:RibbonTab>
+                <!-- Ribbon Tab #2: Tools -->
+                <Custom:RibbonTab Header="Tools" KeyTip="TL" Margin="0,0,0,36">
+                    <Custom:RibbonButton Label="Convert Audio" KeyTip="CA" />
+                </Custom:RibbonTab>
+                <!-- Ribbon Tab #3: View -->
+                <Custom:RibbonTab Header="View" KeyTip="V" Margin="0,0,0,38">
+                    <Custom:RibbonButton Label="Open Player View" KeyTip="PV"/>
+                    <Custom:RibbonButton Label="Open Library View" KeyTip="LV"/>
+                    <Custom:RibbonButton Label="Open Playlist View" KeyTip="PLV"/>
+                </Custom:RibbonTab>
+                <!-- Ribbon Tab #4: Help -->
+                <Custom:RibbonTab Header="Help" KeyTip="H" Margin="0,0,0,38">
+                    <Custom:RibbonButton Label="Open ReadMe" KeyTip="RM" />
+                </Custom:RibbonTab>
+            </Custom:Ribbon>
         </Grid>
     </DockPanel>
 </Window>

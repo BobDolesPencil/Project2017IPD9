@@ -62,5 +62,10 @@ namespace ipdMPMain
             throw new NotImplementedException();
         }
 
+        private void Ribbon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
     }
 }

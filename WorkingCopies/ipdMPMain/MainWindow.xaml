@@ -1,24 +1,21 @@
-﻿<Window x:Class="ipdMPMain.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" MaxHeight="548" MaxWidth="725" Height="548" Width="725" WindowState="Maximized">
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="ipdMPMain.MainWindow"
+        Title="MainWindow" MinHeight="348" MinWidth="425" WindowState="Maximized">
     <DockPanel Margin="0,0,0,-4">
-        <Menu Height="24" VerticalAlignment="Top" DockPanel.Dock="Top">
-            <MenuItem Header="User"/>
-            <MenuItem Header="Tools"/>
-            <MenuItem Header="View"/>
-            <MenuItem Header="Help"/>
-        </Menu>
+
         <Grid>
+
             <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="220,461,448,10" RenderTransformOrigin="-0.082,0.517"/>
             <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="416,461,252,10"/>
             <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="269,461,399,10"/>
             <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="367,461,301,10"/>
             <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="318,461,350,10" RenderTransformOrigin="0.531,1.207"/>
 
-            <TabControl TabStripPlacement="Left" DockPanel.Dock="Top" Margin="0,0,0,37">
+            <TabControl TabStripPlacement="Left" DockPanel.Dock="Top" Margin="0,96,0,61">
                 <TabItem Header="Player">
-                    <MediaElement Name="MePlayer" LoadedBehavior="Manual" Stretch="None" />
+                    <MediaElement x:Name="MePlayer" LoadedBehavior="Manual" Stretch="None" Margin="0,0,0,-6" />
                 </TabItem>
                 <TabItem Header="Library">
                     <ListView>
@@ -50,6 +47,64 @@
             <StatusBar HorizontalAlignment="Stretch" Height="26" Margin="2,462,497,0" VerticalAlignment="Top" Width="218"/>
             <Slider HorizontalAlignment="Stretch" Margin="465,462,117,0" VerticalAlignment="Top" Height="26" Width="135"/>
             <ProgressBar HorizontalAlignment="Stretch" Height="26" Margin="598,461,0,0" VerticalAlignment="Top"/>
+            <Custom:Ribbon HorizontalAlignment="Left" VerticalAlignment="Top" Height="96" Width="717" SelectionChanged="Ribbon_SelectionChanged">
+                <Custom:Ribbon.HelpPaneContent>
+                    <Custom:RibbonButton/>
+                </Custom:Ribbon.HelpPaneContent>
+                <!-- Quick Access Toolbar - located at the upper-left corner -->
+                <Custom:Ribbon.QuickAccessToolBar>
+                    <Custom:RibbonQuickAccessToolBar>
+                        <Custom:RibbonButton x:Name ="Save" />
+                        <Custom:RibbonSplitButton x:Name ="Undo" >
+                            <Custom:RibbonSplitMenuItem Header="Undo 1" />
+                            <Custom:RibbonSplitMenuItem Header="Undo 2" />
+                            <Custom:RibbonSplitMenuItem Header="Undo 3" />
+                        </Custom:RibbonSplitButton>
+                        <Custom:RibbonSplitButton x:Name="Redo"  >
+                            <Custom:RibbonSplitMenuItem Header="Redo 1" />
+                            <Custom:RibbonSplitMenuItem Header="Redo 2" />
+                        </Custom:RibbonSplitButton>
+                    </Custom:RibbonQuickAccessToolBar>
+                </Custom:Ribbon.QuickAccessToolBar>
+                <!-- Application Menu, located at the left-hand side (down arrow) -->
+                <Custom:Ribbon.ApplicationMenu>
+                    <Custom:RibbonApplicationMenu KeyTip="M">
+                        <Custom:RibbonApplicationMenuItem Header="Options"  ImageSource="Images\options.png" />
+                        <Custom:RibbonApplicationMenuItem Header="Exit"  ImageSource="Images\quit.png" />
+                    </Custom:RibbonApplicationMenu>
+                </Custom:Ribbon.ApplicationMenu>
+                <!-- Ribbon Tab #1: User -->
+                <Custom:RibbonTab Header="User" KeyTip="U" Margin="0,0,0,46" >
+                    <!-- User group-->
+                    <Custom:RibbonGroup x:Name="UserGroup" Header="User">
+                        <Custom:RibbonMenuButton  Label="Register" KeyTip="R">
+                            <Custom:RibbonMenuItem Header="Create New" KeyTip="C"/>
+                        </Custom:RibbonMenuButton>
+                        <Custom:RibbonButton Label="Log In" KeyTip="LI" />
+                    </Custom:RibbonGroup>
+                    <!-- Layout group-->
+                    <Custom:RibbonGroup x:Name="Layout" Header="Application Layout">
+                        <Custom:RibbonMenuButton Label="Select Skin" KeyTip="SK">
+                            <Custom:RibbonMenuItem Header="Theme" KeyTip="T"/>
+                            <Custom:RibbonMenuItem Header="Color" KeyTip="C"/>
+                        </Custom:RibbonMenuButton>
+                    </Custom:RibbonGroup>
+                </Custom:RibbonTab>
+                <!-- Ribbon Tab #2: Tools -->
+                <Custom:RibbonTab Header="Tools" KeyTip="TL" Margin="0,0,0,36">
+                    <Custom:RibbonButton Label="Convert Audio" KeyTip="CA" />
+                </Custom:RibbonTab>
+                <!-- Ribbon Tab #3: View -->
+                <Custom:RibbonTab Header="View" KeyTip="V" Margin="0,0,0,38">
+                    <Custom:RibbonButton Label="Open Player View" KeyTip="PV"/>
+                    <Custom:RibbonButton Label="Open Library View" KeyTip="LV"/>
+                    <Custom:RibbonButton Label="Open Playlist View" KeyTip="PLV"/>
+                </Custom:RibbonTab>
+                <!-- Ribbon Tab #4: Help -->
+                <Custom:RibbonTab Header="Help" KeyTip="H" Margin="0,0,0,38">
+                    <Custom:RibbonButton Label="Open ReadMe" KeyTip="RM" />
+                </Custom:RibbonTab>
+            </Custom:Ribbon>
         </Grid>
     </DockPanel>
 </Window>
