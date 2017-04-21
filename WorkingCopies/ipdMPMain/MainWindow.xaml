@@ -14,10 +14,10 @@
             <Button Content="Button" VerticalAlignment="Stretch" Width="49" Margin="318,461,350,10" RenderTransformOrigin="0.531,1.207"/>
 
             <TabControl TabStripPlacement="Left" DockPanel.Dock="Top" Margin="0,96,0,61">
-                <TabItem Header="Player">
+                <TabItem Header="Player" Name="Player" Visibility="Collapsed">
                     <MediaElement x:Name="MePlayer" LoadedBehavior="Manual" Stretch="None" Margin="0,0,0,-6" />
                 </TabItem>
-                <TabItem Header="Library">
+                <TabItem Header="Library" Name="Library" Visibility="Collapsed">
                     <ListView>
                         <ListView.View>
                             <GridView>
@@ -30,7 +30,7 @@
                         </ListView.View>
                     </ListView>
                 </TabItem>
-                <TabItem Header="Playlist">
+                <TabItem Header="Playlist" Name="Playlist" Visibility="Collapsed">
                     <ListView>
                         <ListView.View>
                             <GridView>
